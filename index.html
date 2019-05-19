@@ -23,20 +23,29 @@
 
 <body>
     <div class="container">
+        <!-- "Add GIF" button and text-box will display here -->
         <div class="row">
             <div class="col-lg-2">
                 <!-- Button triggers new GIF to be added -->
-                <button id="add-gif" class="btn btn-info btn-md" type="button" type="submit" value="Submit">Add GIF</button>
+                <wrapper class="column-style">
+                    <button id="add-gif" class="btn btn-info btn-md" type="button" type="submit" value="Submit">Add GIF</button>
+                </wrapper>
             </div>
 
+            <!-- Search box -->
             <div class="col-lg-8">
-                <!-- Search box -->
-                <label id="search-box">
+                <wrapper class="column-style">
+                    <label id="search-box">
                     <input type="text" id="gif-input" placeholder=" Type GIF Here!">
                 </label>
+                </wrapper>
             </div>
-            <!-- GIFs will be dumped here -->
-            <div class="col-8" id="gifs-view"></div>
+        </div>
+        <!-- GIFs will be dumped here -->
+        <div class="row">
+            <div class="col-4">
+                <div class="gif" id="gifs-view"></div>
+            </div>
         </div>
 
     </div>

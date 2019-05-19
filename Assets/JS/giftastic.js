@@ -30,15 +30,15 @@ function displayGifInfo(gif) {
         for (var i = 0; i < responeData.length; i++) {
             // Rating
             console.log()
-            var pRating = $("<p> Rating: " + responeData[i].rating + "</p>" + "<br>");
+            var pRating = $("<p>").text("Rating: " + responeData[i].rating);
             var img = $("<img src='" + responeData[i].images.fixed_height_still.url + "'/>")
             img.attr("data-still", response.data[i].images.fixed_height_still.url);
             img.attr("data-animate", response.data[i].images.fixed_height.url);
             img.attr("data-state", "still");
             img.attr("class", "gif");
-            $('#gifs-view').append(pRating);
-            $('#gifs-view').append(img);
-            // pRating.append(img);
+            $('#gifs-view').prepend(pRating);
+            // $('#gifs-view').append(img);
+            pRating.append(img);
         }
     });
 
@@ -78,6 +78,8 @@ $("#add-gif").on("click", function(event) {
     // Adding movie from the textbox to our array
     gifs.push(gifInput);
 
+    // $('#add-gif').
+
     // Calling renderButtons which handles the processing of our movie array
     renderButtons();
 });
@@ -92,13 +94,14 @@ $(document).on("click", ".gif-btn", function() {
     console.log(word)
     displayGifInfo(word)
 
-
-
 });
 
 // Targets .gif
-$(".gif").on("click", function() {
+$("body").on("click", ".gif", function() {
+    console.log("it worked");
+
     var state = $(this).attr('data-state');
+
     if (state === 'still') {
         var dataAnimate = $(this).attr('data-animate');
         $(this).attr('src', dataAnimate);
