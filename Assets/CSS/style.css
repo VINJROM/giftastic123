@@ -4,6 +4,17 @@ form,
 input,
 p {
     margin: 10px;
+    color: white;
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    border-radius: 10px;
+    border: 1px black solid;
+    background-color: darkgrey;
 }
 
 #submit-button {
@@ -14,4 +25,6 @@ p {
     /* margin: 2px; */
 }
 
-.column-style {}
+.column-style {
+    color: darkslategrey;
+}

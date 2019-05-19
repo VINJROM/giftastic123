@@ -8,8 +8,9 @@ var APIKEY = "B8COWoYL2EO5rDo97TV1aaTFQdaF8rma";
 
 // FUNCTIONS =================================================
 // Function re-renders HTML to display appropriate content
-function displayGifInfo(gif) {
+var gif = $('')
 
+function displayGifInfo(gif) {
     // var gif = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=" + APIKEY + "&limit=10";
 
@@ -80,8 +81,8 @@ $("#add-gif").on("click", function(event) {
     // Calling renderButtons which handles the processing of our GIF array
     renderButtons();
 
-    // MUST DISPLAY GIF LOOP WHEN CLICKED
-    displayGifInfo(gif);
+    // Displays GIF when button added
+    // displayGifInfo(gif);
 
 });
 
