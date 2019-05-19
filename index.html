@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+</head>
+
+<!-- Header where GIF-array will be stored -->
+<header id="head">
+    <div class="container grey-background">
+        <div class="row">
+            <!-- Rendered Buttons will get Dumped Here  -->
+            <div id="buttons-view"></div>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- GIF Search area -->
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <!-- Button triggers new GIF to be added -->
+                <button id="add-gif" class="btn btn-info btn-md" type="button" type="submit" value="Submit">Add GIF</button>
+            </div>
+
+            <div class="col-lg-8">
+                <!-- Search box -->
+                <label id="search-box">
+                    <input type="text" id="gif-input" placeholder=" Type GIF Here!">
+                </label>
+            </div>
+            <!-- GIFs will be dumped here -->
+            <div class="col-8" id="gifs-view"></div>
+        </div>
+
+    </div>
+</body>
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Script -->
+<script type="text/javascript" src="Assets/JS/giftastic.js"></script>
+
+
+</html>

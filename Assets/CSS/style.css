@@ -1,0 +1,15 @@
+button,
+div,
+form,
+input,
+p {
+    margin: 10px;
+}
+
+#submit-button {
+    margin-right: -60px;
+}
+
+#search-box {
+    /* margin: 2px; */
+}
