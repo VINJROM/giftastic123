@@ -13,6 +13,7 @@ function displayGifInfo(gif) {
     // var gif = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=" + APIKEY + "&limit=10";
 
+    // AJAX call
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -20,24 +21,20 @@ function displayGifInfo(gif) {
         console.log(response);
         console.log(response.data[0].rating);
 
-        // 1) Creating a div to hold the GIF rating
-        var ratingDiv = $("<div class='rating'>")
-
         // Storing the rating data
         // var rating = response.data[0].rating;
-        var responeData = response.data;
+        var responseData = response.data;
         console.log(response.data.rating);
-        for (var i = 0; i < responeData.length; i++) {
+        for (var i = 0; i < responseData.length; i++) {
             // Rating
             console.log()
-            var pRating = $("<p>").text("Rating: " + responeData[i].rating);
-            var img = $("<img src='" + responeData[i].images.fixed_height_still.url + "'/>")
-            img.attr("data-still", response.data[i].images.fixed_height_still.url);
-            img.attr("data-animate", response.data[i].images.fixed_height.url);
+            var pRating = $("<div>").text("Rating: " + responseData[i].rating);
+            var img = $("<img src='" + responseData[i].images.fixed_height_still.url + "'/>")
+            img.attr("data-still", responseData[i].images.fixed_height_still.url);
+            img.attr("data-animate", responseData[i].images.fixed_height.url);
             img.attr("data-state", "still");
             img.attr("class", "gif");
             $('#gifs-view').prepend(pRating);
-            // $('#gifs-view').append(img);
             pRating.append(img);
         }
     });
@@ -57,7 +54,7 @@ function renderButtons() {
 
         // Then dynamicaly generating buttons for each movie in the array
         // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-        var a = $("<button>");
+        var a = $("<button class='btn btn-success btn-md'>");
         // Adding a class of movie-btn to our button
         a.addClass("gif-btn");
         // Adding a data-attribute
@@ -80,8 +77,12 @@ $("#add-gif").on("click", function(event) {
 
     // $('#add-gif').
 
-    // Calling renderButtons which handles the processing of our movie array
+    // Calling renderButtons which handles the processing of our GIF array
     renderButtons();
+
+    // MUST DISPLAY GIF LOOP WHEN CLICKED
+    displayGifInfo(gif);
+
 });
 
 // Calling the renderButtons function to display the intial buttons
@@ -94,9 +95,10 @@ $(document).on("click", ".gif-btn", function() {
     console.log(word)
     displayGifInfo(word)
 
+
 });
 
-// Targets .gif
+// Targets .gif and changes from data-type "still"to "animate" upon click
 $("body").on("click", ".gif", function() {
     console.log("it worked");
 
