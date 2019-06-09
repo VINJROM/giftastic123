@@ -4,18 +4,20 @@ form,
 input,
 p {
     margin: 10px;
-    color: black;
+    color: white;
 }
 
 body {
-    background-color: white;
+    background: url("../Images/Theater_Stage_Background.jpg");
+    background-size: 100%;
 }
 
-.container {
+
+/* .wrapper {
+    background-color: black;
     border-radius: 10px;
     border: 1px black solid;
-    background-color: darkgrey;
-}
+} */
 
 #submit-button {
     margin-right: -60px;

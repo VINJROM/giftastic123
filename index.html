@@ -9,10 +9,12 @@
 
 <!-- Header where GIF-array will be stored -->
 <header id="head">
-    <div class="container grey-background">
-        <div class="row btn-group btn-group-justified">
-            <!-- Rendered Buttons will get Dumped Here  -->
-            <div id="buttons-view"></div>
+    <div class="container">
+        <div id="wrapper">
+            <div class="row btn-group btn-group-justified">
+                <!-- Rendered Buttons will get Dumped Here  -->
+                <div id="buttons-view"></div>
+            </div>
         </div>
 
     </div>
@@ -23,29 +25,30 @@
 
 <body>
     <div class="container">
+        <div id="wrapper">
+            <!-- "Add GIF" button and text-box will display here -->
+            <div class="row">
+                <div class="col-lg-2">
+                    <wrapper class="column-style">
+                        <button id="add-gif" class="btn btn-danger btn-md" type="button" type="submit" value="Submit">Add GIF</button>
+                    </wrapper>
+                </div>
 
-        <!-- "Add GIF" button and text-box will display here -->
-        <div class="row">
-            <div class="col-lg-2">
-                <wrapper class="column-style">
-                    <button id="add-gif" class="btn btn-success btn-md" type="button" type="submit" value="Submit">Add GIF</button>
-                </wrapper>
-            </div>
-
-            <!-- Search input-box -->
-            <div class="col-lg-6">
-                <wrapper class="column-style">
-                    <label id="search-box">
+                <!-- Search input-box -->
+                <div class="col-lg-6">
+                    <wrapper class="column-style">
+                        <label id="search-box">
                          <input type="text" class="form-control" id="gif-input" placeholder=" Type GIF Here!">
                     </label>
-                </wrapper>
+                    </wrapper>
+                </div>
             </div>
-        </div>
 
-        <!-- GIFs will be dumped here -->
-        <div class="row">
-            <div class="col-12">
-                <div class="gif" id="gifs-view">:D</div>
+            <!-- GIFs will display here -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="gif" id="gifs-view">:D</div>
+                </div>
             </div>
         </div>
     </div>

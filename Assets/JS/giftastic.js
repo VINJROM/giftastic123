@@ -1,7 +1,7 @@
 // GLOBAL VARIABLES ===========================================
 
 // Initial array of GIFs.
-var gifs = ["Joy", "Fear", "Anger", "Sadness", "Interest", "Disgust", "Surprise"];
+var gifs = ["Joy", "Fear", "Surprise", "Anger", "Sadness", "Interest", "Disgust"];
 
 // API Key
 var APIKEY = "B8COWoYL2EO5rDo97TV1aaTFQdaF8rma";
@@ -23,13 +23,12 @@ function displayGifInfo(gif) {
         console.log(response.data[0].rating);
 
         // Storing the rating data
-        // var rating = response.data[0].rating;
         var responseData = response.data;
         console.log(response.data.rating);
         for (var i = 0; i < responseData.length; i++) {
-            // Rating
-            console.log()
-            var pRating = $("<div>").text("Rating: " + responseData[i].rating);
+            // Ratings
+            var pRating = $("<p>").text("Rating: " + responseData[i].rating);
+            // Populates a still image unless clicked
             var img = $("<img src='" + responseData[i].images.fixed_height_still.url + "'/>")
             img.attr("data-still", responseData[i].images.fixed_height_still.url);
             img.attr("data-animate", responseData[i].images.fixed_height.url);
