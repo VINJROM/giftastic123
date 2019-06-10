@@ -24,19 +24,39 @@ function displayGifInfo(gif) {
 
         // Storing the rating data
         var responseData = response.data;
-        console.log(response.data.rating);
+        // console.log(response.data.rating);
         for (var i = 0; i < responseData.length; i++) {
-            // Ratings
+            var gifDiv = $("<div>");
             var pRating = $("<p>").text("Rating: " + responseData[i].rating);
+            var pTitle = $("<p>").text("Title: " + responseData[i].title);
+            var gifImg = $("<img>");
             // Populates a still image unless clicked
-            var img = $("<img src='" + responseData[i].images.fixed_height_still.url + "'/>")
-            img.attr("data-still", responseData[i].images.fixed_height_still.url);
-            img.attr("data-animate", responseData[i].images.fixed_height.url);
-            img.attr("data-state", "still");
-            img.attr("class", "gif");
-            $('#gifs-view').prepend(pRating);
-            pRating.append(img);
+            gifImg.attr("src", responseData[i].images.fixed_height_still.url);
+            gifImg.attr("data-still", responseData[i].images.fixed_height_still.url);
+            gifImg.attr("data-animate", responseData[i].images.fixed_height.url);
+            gifImg.attr("data-state", "still");
+            gifImg.attr("class", "gif");
+            gifDiv.append(pRating);
+            gifDiv.append(pTitle);
+            gifDiv.append(gifImg)
+            $('#gifs-view').prepend(gifDiv);
         }
+        //IAN'S CODE
+        // for (var i = 0; i < results.length; i++) {
+        //     var animalDiv = $("<div>");
+        //     var p = $("<p>").text("Rating: " + results[i].rating);
+        //     var t = $("<p>").text("Title: " + results[i].title);
+        //     var animalImage = $("<img>");
+        //     // Attributes multiple URLs to GIFs for *hopeful* playback
+        //     animalImage.attr("src", results[i].images.fixed_height_still.url);
+        //     animalImage.attr("data-still", response.data[i].images.fixed_height_still.url);
+        //     animalImage.attr("data-animate", response.data[i].images.fixed_height.url);
+        //     animalImage.attr("data-state", "still");
+        //     animalImage.attr("class", "gif");
+        //     animalDiv.append(p);
+        //     animalDiv.append(t);
+        //     animalDiv.append(animalImage);
+        //     $("#gifs-appear-here").prepend(animalDiv);
     });
 
     $('#gifs-view').empty();
