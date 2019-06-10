@@ -1,7 +1,7 @@
 // GLOBAL VARIABLES ===========================================
 
 // Initial array of GIFs.
-var gifs = ["Joy", "Fear", "Surprise", "Anger", "Sadness", "Interest", "Disgust"];
+var gifs = ["WOW", "Happy", "Interested", "Dramatic", "Applause", "Angry", "Surprised", "WTF", "Yes", "No"];
 
 // API Key
 var APIKEY = "B8COWoYL2EO5rDo97TV1aaTFQdaF8rma";
@@ -41,22 +41,6 @@ function displayGifInfo(gif) {
             gifDiv.append(gifImg)
             $('#gifs-view').prepend(gifDiv);
         }
-        //IAN'S CODE
-        // for (var i = 0; i < results.length; i++) {
-        //     var animalDiv = $("<div>");
-        //     var p = $("<p>").text("Rating: " + results[i].rating);
-        //     var t = $("<p>").text("Title: " + results[i].title);
-        //     var animalImage = $("<img>");
-        //     // Attributes multiple URLs to GIFs for *hopeful* playback
-        //     animalImage.attr("src", results[i].images.fixed_height_still.url);
-        //     animalImage.attr("data-still", response.data[i].images.fixed_height_still.url);
-        //     animalImage.attr("data-animate", response.data[i].images.fixed_height.url);
-        //     animalImage.attr("data-state", "still");
-        //     animalImage.attr("class", "gif");
-        //     animalDiv.append(p);
-        //     animalDiv.append(t);
-        //     animalDiv.append(animalImage);
-        //     $("#gifs-appear-here").prepend(animalDiv);
     });
 
     $('#gifs-view').empty();

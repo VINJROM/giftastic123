@@ -10,6 +10,10 @@ p {
 body {
     background: url("../Images/Theater_Stage_Background.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 
