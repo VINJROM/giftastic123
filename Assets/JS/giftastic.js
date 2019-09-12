@@ -7,11 +7,12 @@ var gifs = ["WOW", "Happy", "Interested", "Dramatic", "Applause", "Angry", "Surp
 var APIKEY = "B8COWoYL2EO5rDo97TV1aaTFQdaF8rma";
 
 // FUNCTIONS =================================================
+
 // Function re-renders HTML to display appropriate content
 var gif = $('')
 
+// Function retrieves GIF-data and displays rating, title, and still/moving image
 function displayGifInfo(gif) {
-    // var gif = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=" + APIKEY + "&limit=10";
 
     // AJAX call
@@ -24,7 +25,6 @@ function displayGifInfo(gif) {
 
         // Storing the rating data
         var responseData = response.data;
-        // console.log(response.data.rating);
         for (var i = 0; i < responseData.length; i++) {
             var gifDiv = $("<div>");
             var pRating = $("<p>").text("Rating: " + responseData[i].rating);
@@ -42,14 +42,14 @@ function displayGifInfo(gif) {
             $('#gifs-view').prepend(gifDiv);
         }
     });
-
+    // Clears display area when new AJAX call initiates
     $('#gifs-view').empty();
 }
 
 // Function for displaying GIF buttons
 function renderButtons() {
 
-    // Deleting the movies prior to adding new movies
+    // Deleting the GIFs prior to adding new GIFs
     // (this is necessary otherwise you will have repeat buttons)
     $("#buttons-view").empty();
 
@@ -72,21 +72,15 @@ function renderButtons() {
 
 // Adds GIF input to array
 $("#add-gif").on("click", function(event) {
+
+    // "preventDefault" keeps page from refreshing when button is clicked
     event.preventDefault();
     // This line grabs the input from the textbox
     var gifInput = $("#gif-input").val().trim();
-
-    // Adding movie from the textbox to our array
+    // Adding GIF from the textbox to our array
     gifs.push(gifInput);
-
-    // $('#add-gif').
-
     // Calling renderButtons which handles the processing of our GIF array
     renderButtons();
-
-    // Displays GIF when button added
-    // displayGifInfo(gif);
-
 });
 
 // Calling the renderButtons function to display the intial buttons
@@ -98,8 +92,6 @@ $(document).on("click", ".gif-btn", function() {
     var word = $(this).attr('data-name')
     console.log(word)
     displayGifInfo(word)
-
-
 });
 
 // Targets .gif and changes from data-type "still"to "animate" upon click
@@ -117,5 +109,4 @@ $("body").on("click", ".gif", function() {
         $(this).attr('src', dataAnimate);
         $(this).attr('data-state', 'still');;
     }
-
 });
