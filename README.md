@@ -9,5 +9,3 @@ This game is part of the University of Minnesota's Web Application Development p
 *** Result ***
 The result is quick way for users to search gifs based on their input.
 
-*** Improvements ***
-I would like the GIF input to display as their added to the array. The GIFs should also be populating in rows instead of one single column. 
