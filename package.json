@@ -1,0 +1,19 @@
+{
+  "name": "giftastic",
+  "version": "1.0.0",
+  "description": "*** GIFTASTIC ***",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VINJROM/GifTastic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VINJROM/GifTastic/issues"
+  },
+  "homepage": "https://github.com/VINJROM/GifTastic#readme"
+}
